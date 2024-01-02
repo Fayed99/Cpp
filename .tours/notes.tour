@@ -1,0 +1,11 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Notes",
+  "steps": [
+    {
+      "file": "Notes.md",
+      "description": "#include <iostream>\r\nint main()\r\n{\r\n    char str1[] = \"Hello. How are you. Hey there\";\r\n\r\n    // Convert to uppercase\r\n    for (int i = 0; str1[i]; i++)\r\n    {\r\n        str1[i] = toupper(str1[i]);\r\n    }\r\n    std::cout << \"Uppercase: \" << str1 << std::endl;\r\n\r\n    return 0;\r\n}",
+      "line": 38
+    }
+  ]
+}
