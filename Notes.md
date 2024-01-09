@@ -1,3 +1,22 @@
+Structures:
+
+Structures (also called structs) are a way to group several related variables into one place.
+
+struct {-------------// Structure declaration
+  int myNum;---------// Member (int variable)
+  string myString;---// Member (string variable)
+} myStructure;-------// Structure variable
+
+Access Structure Members-
+
+struct {-------------------------------------------//declear
+  int myNum;
+  string myString;
+} myStructure;
+myStructure.myNum = 1;----------------------------//Assign value to a member
+std::cout << myStructure.myNum << std::endl;------// call a structer
+
+
 Pointers:
 
 int* ptr_number{&number};--------------//points toward number
@@ -13,8 +32,8 @@ ptr_number{nullptr};------------------ //points to nothing
 
 Referance:
 
-int &ref_number{number}; -----------------//points to number
-int &ref_number{another_number};----------//points to another_number
+int &ref_number{number}; -----------------//points toward the value
+int &ref_number{another_number};----------//points to another value
 ref_number = 36;--------------------------//changes number to 36
 const &ref_number = another_number; ------//Gives Error
 
@@ -57,3 +76,60 @@ std::strncpy(new_line, main_line, 6)--//works like strcpy but can choose length
 std::strcat(first_string, second_string, 6)----//Concatenate second onto the end of second_string
 
 C++ functions:
+
+
+1.void function -------//does not return any value
+
+void functionName();-------------- header of a function
+
+frame 1: void functionName(){
+    std::cout << "HELLO WORLD" << std::endl;-----------//function without parameters
+}
+
+frame 2: void printMessage(int times, std::string message) {-------//function with parameter
+    for(int i = 0; i < times; i++) {
+        std::cout << message << std::endl;
+    }
+}
+
+
+2.return type functions-----------//returns a value
+
+integer type:
+
+int add(int a, int b) {
+    return a + b;
+}
+
+ double type:
+
+ double divide(int a, int b) {
+    return static_cast<double>(a) / b;
+}
+ 
+string type:
+
+std::string greet(std::string name) {
+    return "Hello, " + name;
+}
+
+lambda function:
+
+ 1. auto func = []() -> void {
+        std::cout <<"Hello world"<< std::endl; -------//function without paremeters
+    };
+
+2. [](){
+        std::cout << "Hello world" << std::endl; ----//calling the function with () at the end of the function 
+    }();
+
+3. auto add = [](double a, double b) -> double { ------//declear the function with paremeter
+    return a + b;
+};
+
+    double result = add(1.5, 2.5); -------------------------//call the function
+    std::cout << "The sum is: " << result << std::endl;
+
+4.  auto add = [](double a, double b) -> int { --------//turns double type into integer type
+       std::cout << a + b std::endl;
+    }(23.0, 45.0); -------------------------------------//declear the function with paremeter and call the function instantly
